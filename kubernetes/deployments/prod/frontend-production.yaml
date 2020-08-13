@@ -13,11 +13,14 @@
 # limitations under the License.
 
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   name: gceme-frontend-production
 spec:
   replicas:
+  selector:
+    matchLabels:
+      app: gceme
   template:
     metadata:
       name: frontend
